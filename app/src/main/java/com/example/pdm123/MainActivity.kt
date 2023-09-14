@@ -18,7 +18,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.example.pdm123.firstpartial.FirstPartialView
+import com.example.pdm123.firstpartial.*
 import com.example.pdm123.navigation.NavBarItems
 import com.example.pdm123.navigation.NavRoutes
 import com.example.pdm123.secondpartial.SecondPartialView
@@ -73,7 +73,16 @@ fun NavigationHost(navController: NavHostController){
             PadelScoreView(navController = navController)
         }
         composable(NavRoutes.evenorodd.route){
-            ParOnonView(navController = navController)
+            EvenOrOddView(navController = navController, viewModel = EvenOrOddViewModel())
+        }
+        composable(NavRoutes.cards.route){
+            CartasView(navController = navController, viewModel = CartasViewModel())
+        }
+        composable(NavRoutes.minor.route){
+            NumMView(navController = navController, viewModel = NumMViewModel())
+        }
+        composable(NavRoutes.barber.route){
+            BarberView(navController = navController, viewModel = BarberViewModel())
         }
     }
 }
